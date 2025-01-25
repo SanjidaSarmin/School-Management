@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f4fb;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .sidebar .logo h2 {
+    font-size: 1.5em;
+    color: #4a4a68;
+    font-weight: bold;
+  }
+  
+  .sidebar .menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar .menu li {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #4a4a68;
+    font-size: 1em;
+  
+  }
+  
+  .sidebar .menu li.active,
+  .sidebar .menu li:hover {
+    background-color: #ece6f9;
+    color: #6a45ef;
+  }
+  
+  .sidebar .menu li span {
+    margin-right: 10px;
+  }
+  
+  .sidebar .profile {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+  }
+  
+  .sidebar .profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .sidebar .profile .info p {
+    margin: 0;
+    font-size: 1em;
+    color: #4a4a68;
+  }
+  
+  .sidebar .profile .info a {
+    text-decoration: none;
+    color: #6a45ef;
+    font-size: 0.9em;
+  }
+  .menu-link {
+  text-decoration: none;
+  color: #000;
+  padding: 10px;
+  display: block;
+}
+
+.menu-link:hover {
+  color: #007bff;  /* Change to any color you prefer */
+  background-color: #f0f0f0;  /* Optional: add background change on hover */
+  border-radius: 4px;  /* Optional: round the corners on hover */
+}
+  
+
+  // Main content
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f7f4fb;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .header {
+    margin-bottom: 30px;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .header p {
+    font-size: 16px;
+    color: #000000;
+  }
+  
+  .main-content .header .search {
+    display: flex;
+    align-items: center;
+  }
+  
+  .main-content .header .search input {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+  }
+  
+  .summary-report .cards {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .summary-report .card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin-top: 15px;
+  }
+  .summary-report .card:hover {
+    transform: translateY(-10px); /* Move the card slightly upwards */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add a stronger shadow */
+    background-color: #ece6f9; /* Change background color slightly */
+    cursor: pointer;
+  }
+  .summary-report .card:hover h3,
+.summary-report .card:hover p {
+  color: #6a45ef; /* Change text color on hover */
+}
+  
+.details {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.details > div {
+  background-color: #f8f9fa; /* Light background color for contrast */
+  border: 1px solid #e0e0e0; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px;
+  flex: 1; /* Ensure all sections take equal width */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.details > div:hover {
+  transform: translateY(-5px); /* Slight hover lift */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.details h3 {
+  font-size: 18px;
+  color: #004d7a; /* Dark blue for headings */
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0; /* Separator under heading */
+  padding-bottom: 5px;
+}
+
+.details p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.details ul li {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.details ul li strong {
+  color: #004d7a; /* Emphasize important text */
+}

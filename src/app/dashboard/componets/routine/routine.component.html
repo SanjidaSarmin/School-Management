@@ -1,0 +1,444 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <!-- Logo and School Name (left side) -->
+    <a class="navbar-brand" href="#">
+      <img src="/assets/logo.png" alt="Logo" style="width:40px;">
+    </a>&nbsp;
+    <a class="nav-link" href="#" style="font-size: 18px;">eSkooly</a>
+
+    <!-- Nav links (left side) -->
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/admission">Admissions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/routine">Routine</a>
+        </li>
+        <!-- Class dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Student
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="admissionsDropdown">
+            <li><a class="dropdown-item" routerLink="/dashboard/student/slist">Student List</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/tuition">Tuition fees </a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/examsys">Exam System</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/uniform">Student Uniform</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/exam">Exam Routine</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/rules">Rules and Regulation</a></li>
+            
+          </ul>
+        </li>
+        <!-- Exam dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Result
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="admissionsDropdown">
+            <li><a class="dropdown-item" routerLink="/dashboard/result">Quiz</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/result">Class Test</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/result">Monthly Test</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/result">Final Exam</a></li>
+          </ul>
+        </li>
+        <!-- Class dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Dashboard
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="admissionsDropdown">
+            <li><a class="dropdown-item" routerLink="/dashboard/dash/admin">Admin Dashboard </a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/dash/studentdb">Student Dashboard </a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/dash/teacherdb">Teacher Dashboard </a></li> 
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/notice">Notice Board</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/dashboard/attend'">Attendance</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  [routerLink]="'/dashboard/student/slist'">Info</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right side (Search, Login, and Sign-In) -->
+    <div class="right-side">
+      <!-- Search Bar -->
+      <input class="search-bar form-control" type="search" placeholder="Search" aria-label="Search">
+
+      <!-- Login and Sign In Buttons -->
+      <button class="btn login-btn ms-2" type="button" routerLink="/dashboard/login">Login</button>
+      <button class="btn signin-btn ms-2" type="button" routerLink="/dashboard/signup">Sign In</button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Routine -->
+<div class="container">
+    <input type="text" class="search-bar" placeholder="Class Routine">
+  
+    <!-- Routine Table for Cherry -->
+    <div class="routine">
+      <h2>Class Routine Of Play & Nursery (Cherry)</h2>
+      <table class="routine-table">
+        <thead>
+          <tr>
+            <th>Period</th>
+            <th *ngFor="let period of periods">{{ period }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of cherrySchedule">
+            <td>{{ row.time }}</td>
+            <td *ngFor="let subject of row.schedule">{{ subject }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Routine Table for Rose -->
+    <div class="routine">
+      <h2>Class Routine Of Play & Nursery (Rose)</h2>
+      <table class="routine-table">
+        <thead>
+          <tr>
+            <th>Period</th>
+            <th *ngFor="let period of periods">{{ period }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of roseSchedule">
+            <td>{{ row.time }}</td>
+            <td *ngFor="let subject of row.schedule">{{ subject }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+      <!-- Routine Table for KG -->
+      <div class="routine">
+        <h2>Class Routine Of KG</h2>
+        <table class="routine-table">
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th *ngFor="let period of periods">{{ period }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of KGSchedule">
+              <td>{{ row.time }}</td>
+              <td *ngFor="let subject of row.schedule">{{ subject }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+       <!-- Routine Table for One -->
+       <div class="routine">
+        <h2>Class Routine Of One</h2>
+        <table class="routine-table">
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th *ngFor="let period of periods">{{ period }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of class1">
+              <td>{{ row.time }}</td>
+              <td *ngFor="let subject of row.schedule">{{ subject }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+       <!-- Routine Table for class2 -->
+       <div class="routine">
+        <h2>Class Routine Of Two</h2>
+        <table class="routine-table">
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th *ngFor="let period of periods">{{ period }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of class2">
+              <td>{{ row.time }}</td>
+              <td *ngFor="let subject of row.schedule">{{ subject }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+       <!-- Routine Table for class3 -->
+       <div class="routine">
+        <h2>Class Routine Of Three</h2>
+        <table class="routine-table">
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th *ngFor="let period of periods">{{ period }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of class3">
+              <td>{{ row.time }}</td>
+              <td *ngFor="let subject of row.schedule">{{ subject }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+       <!-- Routine Table for Class4 -->
+       <div class="routine">
+        <h2>Class Routine Of Four</h2>
+        <table class="routine-table">
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th *ngFor="let period of periods">{{ period }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of class4">
+              <td>{{ row.time }}</td>
+              <td *ngFor="let subject of row.schedule">{{ subject }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Routine Table for Class5 -->
+      <div class="routine">
+        <h2>Class Routine Of Five</h2>
+        <table class="routine-table">
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th *ngFor="let period of periods">{{ period }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of class5">
+              <td>{{ row.time }}</td>
+              <td *ngFor="let subject of row.schedule">{{ subject }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+       <!-- Routine Table for Class6 -->
+       <div class="routine">
+        <h2>Class Routine Of Six</h2>
+        <table class="routine-table">
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th *ngFor="let period of periods">{{ period }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of class6">
+              <td>{{ row.time }}</td>
+              <td *ngFor="let subject of row.schedule">{{ subject }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+       <!-- Routine Table for Class7 -->
+       <div class="routine">
+        <h2>Class Routine Of Seven</h2>
+        <table class="routine-table">
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th *ngFor="let period of periods">{{ period }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of class7">
+              <td>{{ row.time }}</td>
+              <td *ngFor="let subject of row.schedule">{{ subject }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+       <!-- Routine Table for Class8 -->
+       <div class="routine">
+        <h2>Class Routine Of Eight</h2>
+        <table class="routine-table">
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th *ngFor="let period of periods">{{ period }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of class8">
+              <td>{{ row.time }}</td>
+              <td *ngFor="let subject of row.schedule">{{ subject }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+       <!-- Routine Table for Class9 -->
+       <div class="routine">
+        <h2>Class Routine Of Nine</h2>
+        <table class="routine-table">
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th *ngFor="let period of periods">{{ period }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of class9">
+              <td>{{ row.time }}</td>
+              <td *ngFor="let subject of row.schedule">{{ subject }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+       <!-- Routine Table for Class10 -->
+       <div class="routine">
+        <h2>Class Routine Of Ten</h2>
+        <table class="routine-table">
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th *ngFor="let period of periods">{{ period }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of class10">
+              <td>{{ row.time }}</td>
+              <td *ngFor="let subject of row.schedule">{{ subject }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+  </div>
+
+    <!-- Footer -->
+  
+    <div class="feedback-container">
+      <!-- Header Section -->
+      <header class="feedback-header">
+        <h1>Drop us a Line.</h1>
+        <p>Ask us a question, or just say Hello.</p>
+      </header>
+    
+      <div class="feedback-main">
+        <!-- Left Section: Feedback Form -->
+        <div class="feedback-form-section">
+          <form class="feedback-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input id="firstName" type="text" placeholder="Enter your first name" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input id="lastName" type="text" placeholder="Enter your last name" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input id="email" type="email" placeholder="Enter your email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone *</label>
+                <input id="phone" type="tel" placeholder="Enter your phone number" required />
+              </div>
+            </div>
+            <div class="form-group full-width">
+              <label for="message">Message *</label>
+              <textarea id="message" placeholder="Enter your message" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send Message</button>
+          </form>
+        </div>
+    
+        <!-- Right Section: Image and Buttons -->
+        <div class="feedback-image-section">
+          <div class="icon1-section">
+            <div class="icon1">
+              <img src="assets/email.png" alt="Email Icon">
+              <span>Contact us by email</span><br>
+              <a href="">{{email}}</a>
+            </div>
+          </div>
+          <img src="assets/footer.svg" alt="Feedback" class="feedback-image" width="60%">
+        </div>
+      </div>
+    
+      <!-- Footer Section -->
+      <footer class="feedback-footer">
+        <div class="footer-container">
+          <!-- Left Column Section -->
+          <div class="footer-left">
+            <img src="/assets/logo.png" alt="Logo" class="footer-logo" />
+            <p>eSkooly is the world's best and #1 ranked free online school management software.
+              Our school management software has more features than any school software in the market.</p>
+            <br>
+            <p>Copyright © 2024 eSkooly (SMC Private) Ltd. - All rights reserved.</p>
+          </div>
+    
+          <!-- Middle Column Section -->
+          <div class="footer-middle">
+            <div class="footer-links">
+              <p>ESKOOLY</p>
+              <a href="#">Home</a>
+              <a href="#">About</a>
+              <a href="#">Help</a>
+            </div>
+            <div class="footer-links">
+              <p>TERMS</p>
+              <a href="#">Terms of Service</a>
+              <a href="#">Privacy policy</a>
+              <a href="#"> Services</a>
+            </div>
+          </div>
+    
+          <!-- Right Column Section -->
+          <div class="footer-right">
+            <div>
+              <a href="">
+                <img src="/assets/playstore.png" alt="Playstore img" width="40%">
+              </a><br><br>
+              <a href="#">
+                <img src="/assets/applestore.png" alt="Applestore img" width="40%">
+              </a>
+            </div>
+            <div class="footer-icons">
+              <img src="/assets/facebook.png" alt="fb" class="icon" width="30px" height="30px">
+              <img src="/assets/whatsapp.png" alt="whatsapp" class="icon" width="30px" height="30px">
+              <img src="/assets/twitter.png" alt="twitter" class="icon" width="32px" height="32px">
+              <img src="/assets/x.png" alt="x" class="icon" width="30px" height="30px">
+              <img src="/assets/instagram.png" alt="insta" class="icon" width="30px" height="30px">
+            </div>
+          </div>
+        </div>
+      </footer>
+      <router-outlet></router-outlet>
+    
+  
+  

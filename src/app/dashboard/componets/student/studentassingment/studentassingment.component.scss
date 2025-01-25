@@ -1,0 +1,85 @@
+.assignments-container {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.assignments-container h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.student-details {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.student-details p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.assignments-section {
+    margin-top: 30px;
+}
+
+.assignments-section h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #2980b9;
+    text-align: center;
+}
+
+.assignments-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.assignments-table th, .assignments-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.assignments-table th {
+    background-color: #2980b9;
+    color: white;
+    font-weight: bold;
+}
+
+.assignments-table td {
+    background-color: #ecf0f1;
+    font-size: 16px;
+}
+
+.assignments-table td.submitted {
+    color: #27ae60; /* Green for submitted */
+}
+
+.assignments-table td.not-submitted {
+    color: #e74c3c; /* Red for not submitted */
+}
+
+.assignments-table td.late {
+    color: #f39c12; /* Yellow for late */
+}
+
+.assignments-table td:hover {
+    background-color: #bdc3c7;
+}
+
+@media (max-width: 768px) {
+    .assignments-table {
+        font-size: 14px;
+    }
+
+    .assignments-table th, .assignments-table td {
+        padding: 8px;
+    }
+}

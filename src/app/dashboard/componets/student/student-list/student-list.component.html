@@ -1,0 +1,193 @@
+
+
+<!-- Small Pic -->
+<div class="unique-challenges-container">
+  <div class="header-image">
+    <img src="/assets/BoywithPC.svg" alt="Person on Clock" />
+  </div>
+</div>
+
+<!-- List Table -->
+<table class="data-table">
+    <thead>
+        <tr>
+          <th>Id</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Father's Name</th>
+          <th>Mother's Name</th>
+          <th>Date of Birth</th>
+          <th>Gender</th>
+          <th>Religion</th>
+          <th>Nationality</th>
+          <th>Studying Level</th>
+          <th>Admission Class</th>
+          <th>Last School</th>
+          <th>Reference</th>
+          <th>Photo</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      
+    <tbody>
+        <tr *ngFor="let student of StudentList">
+            <td>{{ student.id }}</td>
+            <td>{{ student.f_name }}</td>
+            <td>{{ student.l_name }}</td>
+            <td>{{ student.fathersname }}</td>
+            <td>{{ student.mothersname }}</td>
+            <td>{{ student.dob }}</td>
+            <td>{{ student.gender }}</td>
+            <td>{{ student.religion }}</td>
+            <td>{{ student.nationality }}</td>
+            <td>{{ student.studyingLevel }}</td>
+            <td>{{ student.admissionclass }}</td>
+            <td>{{ student.lastschool }}</td>
+            <td>{{ student.reference }}</td>
+            <!-- Display the photo -->
+            <td>
+                <img
+                  [src]="student.photo"
+                  alt="Student Photo"
+                  width="50"
+                  height="50"
+                  style="border-radius: 50%; object-fit: cover;"
+                />
+              </td>
+              <td style="text-align: center;">
+                <a [routerLink]="['/edit-student/', student.id]">
+                  <button class="btn">Edit</button>
+                </a>
+                |
+                <button class="btn" (click)="deleteStudent(student.id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+  </table>
+
+<!-- Layout Image -->
+<div class="admission-system">
+  <div class="content">
+    <h1>School Admission Management</h1>
+    <p class="subtitle">Digital admission process, Easy form submission, Seamless admission tracking</p>
+    <p class="description">
+      Student admission management system by Fedena to simplify and streamline the
+      chaotic and time-consuming admission process. Manually managing the admission
+      procedure is an overwhelming task for the school’s administrator, and sometimes
+      this cumbersome process leads to human error. Using Fedena school management
+      system, schools can digitize the whole operation and improve the efficiency of the administrators.
+    </p>
+  </div>
+  <div class="graphic">
+    <img src="/assets/Admisson.png" alt="Graphic Placeholder" />
+  </div>
+</div> 
+
+
+
+   <!-- Footer -->
+  
+   <div class="feedback-container">
+    <!-- Header Section -->
+    <header class="feedback-header">
+      <h1>Drop us a Line.</h1>
+      <p>Ask us a question, or just say Hello.</p>
+    </header>
+  
+    <div class="feedback-main">
+      <!-- Left Section: Feedback Form -->
+      <div class="feedback-form-section">
+        <form class="feedback-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input id="firstName" type="text" placeholder="Enter your first name" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input id="lastName" type="text" placeholder="Enter your last name" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input id="email" type="email" placeholder="Enter your email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone *</label>
+              <input id="phone" type="tel" placeholder="Enter your phone number" required />
+            </div>
+          </div>
+          <div class="form-group full-width">
+            <label for="message">Message *</label>
+            <textarea id="message" placeholder="Enter your message" required></textarea>
+          </div>
+          <button type="submit" class="submit-button">Send Message</button>
+        </form>
+      </div>
+  
+      <!-- Right Section: Image and Buttons -->
+      <div class="feedback-image-section">
+        <div class="icon1-section">
+          <div class="icon1">
+            <img src="assets/email.png" alt="Email Icon">
+            <span>Contact us by email</span><br>
+            <a href="">{{email}}</a>
+          </div>
+        </div>
+        <img src="assets/footer.svg" alt="Feedback" class="feedback-image" width="60%">
+      </div>
+    </div>
+  
+    <!-- Footer Section -->
+    <footer class="feedback-footer">
+      <div class="footer-container">
+        <!-- Left Column Section -->
+        <div class="footer-left">
+          <img src="/assets/logo.png" alt="Logo" class="footer-logo" />
+          <p>eSkooly is the world's best and #1 ranked free online school management software.
+            Our school management software has more features than any school software in the market.</p>
+          <br>
+          <p>Copyright © 2024 eSkooly (SMC Private) Ltd. - All rights reserved.</p>
+        </div>
+  
+        <!-- Middle Column Section -->
+        <div class="footer-middle">
+          <div class="footer-links">
+            <p>ESKOOLY</p>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Help</a>
+          </div>
+          <div class="footer-links">
+            <p>TERMS</p>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy policy</a>
+            <a href="#"> Services</a>
+          </div>
+        </div>
+  
+        <!-- Right Column Section -->
+        <div class="footer-right">
+          <div>
+            <a href="">
+              <img src="/assets/playstore.png" alt="Playstore img" width="40%">
+            </a><br><br>
+            <a href="#">
+              <img src="/assets/applestore.png" alt="Applestore img" width="40%">
+            </a>
+          </div>
+          <div class="footer-icons">
+            <img src="/assets/facebook.png" alt="fb" class="icon" width="30px" height="30px">
+            <img src="/assets/whatsapp.png" alt="whatsapp" class="icon" width="30px" height="30px">
+            <img src="/assets/twitter.png" alt="twitter" class="icon" width="32px" height="32px">
+            <img src="/assets/x.png" alt="x" class="icon" width="30px" height="30px">
+            <img src="/assets/instagram.png" alt="insta" class="icon" width="30px" height="30px">
+          </div>
+        </div>
+      </div>
+    </footer>
+    <router-outlet></router-outlet>
+  
+
+

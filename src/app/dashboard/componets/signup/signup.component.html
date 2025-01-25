@@ -1,0 +1,31 @@
+<div class="container">
+  <!-- Left Column -->
+  <div class="left-column">
+    <img src="/assets/logo.png" alt="Logo" class="logo">
+    <form class="form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <input type="text" placeholder="Your Mail*" class="form-input" formControlName="Email">
+      <input type="password" placeholder="Choose Password*" class="form-input" formControlName="Pass">
+      <input type="password" placeholder="Confirm Password*" class="form-input" formControlName="Pass2">
+
+       <!-- Role Dropdown -->
+       <select class="form-input" formControlName="role" required>
+        <option value="" disabled selected>Select Role*</option>
+        <option value="admin">Admin</option>
+        <option value="teacher">Teacher</option>
+        <option value="student">Student</option>
+      </select>
+
+      <button type="submit" class="submit-button">Sign Up</button>
+    </form>
+    <a href="#" class="hover-link">Already have an account? &nbsp;&nbsp;&nbsp;<button class="login-button" routerLink="/dashboard/login">Login</button></a>
+  </div>
+
+  <!-- Right Column -->
+  <div class="right-column">
+   
+    <h1 class="heading"><span> Welcome </span> to Our Platform</h1>
+    <p class="paragraph">Enjoy seamless management with our tools and features.</p>
+    <p class="paragraph"> Create your <span>Account</span> now!</p>
+    <img src="/assets/signup1.png" alt="Image" class="bottom-image">
+  </div>
+</div> 

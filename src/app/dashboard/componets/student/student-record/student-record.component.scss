@@ -1,0 +1,62 @@
+.academic-records-container {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.academic-records-container h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.student-details {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.student-details p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.academic-records-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.academic-records-table th, .academic-records-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.academic-records-table th {
+    background-color: #2980b9;
+    color: white;
+    font-weight: bold;
+}
+
+.academic-records-table td {
+    background-color: #ecf0f1;
+    font-size: 16px;
+}
+
+.academic-records-table td:hover {
+    background-color: #bdc3c7;
+}
+
+@media (max-width: 768px) {
+    .academic-records-table {
+        font-size: 14px;
+    }
+
+    .academic-records-table th, .academic-records-table td {
+        padding: 8px;
+    }
+}

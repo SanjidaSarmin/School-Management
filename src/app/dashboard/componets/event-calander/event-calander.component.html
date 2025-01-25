@@ -1,0 +1,303 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <!-- Logo and School Name (left side) -->
+    <a class="navbar-brand" href="#">
+      <img src="/assets/logo.png" alt="Logo" style="width:40px;">
+    </a>&nbsp;
+    <a class="nav-link" href="#" style="font-size: 18px;">eSkooly</a>
+
+    <!-- Nav links (left side) -->
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/admission">Admissions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/routine">Routine</a>
+        </li>
+        <!-- Class dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Student
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="admissionsDropdown">
+            <li><a class="dropdown-item" href="#">Student List</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/tuition">Tuition fees </a></li>
+            <li><a class="dropdown-item" href="#">Mobile Banking</a></li>
+            <li><a class="dropdown-item" href="#">Student Uniform</a></li>
+            <li><a class="dropdown-item" href="#">Exam Routine</a></li>
+            <li><a class="dropdown-item" href="#">Rules and Regulation</a></li>
+            
+          </ul>
+        </li>
+        <!-- Exam dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Result
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="admissionsDropdown">
+            <li><a class="dropdown-item" routerLink="/dashboard/result">Quiz</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/result">Class Test</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/result">Monthly Test</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/result">Final Exam</a></li>
+          </ul>
+        </li>
+        <!-- Class dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Dashboard
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="admissionsDropdown">
+            <li><a class="dropdown-item" routerLink="/dashboard/dash/admin">Admin Dashboard </a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/dash/studentdb">Student Dashboard </a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/dash/teacherdb">Teacher Dashboard </a></li> 
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/notice">Notice Board</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/dashboard/attend'">Attendance</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  [routerLink]="'/dashboard/student/slist'">Info</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right side (Search, Login, and Sign-In) -->
+    <div class="right-side">
+      <!-- Search Bar -->
+      <input class="search-bar form-control" type="search" placeholder="Search" aria-label="Search">
+
+      <!-- Login and Sign In Buttons -->
+      <button class="btn login-btn ms-2" type="button" routerLink="/dashboard/login">Login</button>
+      <button class="btn signin-btn ms-2" type="button" routerLink="/dashboard/signup">Sign In</button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Image section -->
+<div class="unique-challenges-container">
+    <h2>Solve Your Unique Challenges</h2>
+    <div class="challenges-grid">
+      <div class="challenge-card">
+        <img src="assets/education-tech-icon.png" alt="Education Technology" />
+        <p>Education Technology</p>
+      </div>
+      <div class="challenge-card selected">
+        <img src="assets/education-services-icon.png" alt="Education Services" />
+        <p>Education Services</p>
+      </div>
+      <div class="challenge-card">
+        <img src="assets/financial-icon.png" alt="Financial" />
+        <p>Financial</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Another Layout -->
+  <div class="academic-year-container">
+    <h1>Academic Year 2015-2016</h1>
+    <hr class="section-divider" />
+    <div class="content">
+     
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Class Name</th>
+              <th>Teacher</th>
+              <th>Assignments</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Astronomy</td>
+              <td>Samantha Turlington</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Astronomy</td>
+              <td>Brandon Yang</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>Geography</td>
+              <td>Tom Goodman</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>Physics (Period 1)</td>
+              <td>Oliver Sherwood</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>AP Chemistry (Period 3)</td>
+              <td>Amanda Elliott</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>Algebra 2 (Period 4)</td>
+              <td>Sangeeta Tomar</td>
+              <td>11</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <!-- Important Dates Section -->
+      <div class="important-dates">
+        <h2>Important Dates</h2>
+        <div class="date-card">
+          <div class="date">
+            <span class="day">8</span>
+            <span class="month">November</span>
+          </div>
+          <div class="details">
+            <p>Year 7 Taster Days</p>
+            <p>
+              Year 6 pupils are invited to join us for a Taster Day on either
+              Thursday 19th or Sunday 22nd.
+            </p>
+          </div>
+        </div>
+        <a href="#" class="calendar-link">Full Academic Calendar &gt;</a>
+      </div>
+    </div>
+  </div>
+  
+<!-- Calendar Section -->
+  <div class="event-calendar-container">
+    <h1>Event Calendar</h1>
+  
+    
+    <div class="calendar">
+      <div class="calendar-header">
+        <span>December 2024</span>
+      </div>
+      <div class="calendar-grid">
+        <div class="day" *ngFor="let day of days">
+          <span>{{ day }}</span>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Upcoming Events Section -->
+    <div class="upcoming-events">
+      <h2>Upcoming Events</h2>
+      <ul>
+        <li *ngFor="let event of events">
+          <strong>{{ event.date }}</strong> - {{ event.title }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+   <!-- Footer -->
+  
+   <div class="feedback-container">
+    <!-- Header Section -->
+    <header class="feedback-header">
+      <h1>Drop us a Line.</h1>
+      <p>Ask us a question, or just say Hello.</p>
+    </header>
+  
+    <div class="feedback-main">
+      <!-- Left Section: Feedback Form -->
+      <div class="feedback-form-section">
+        <form class="feedback-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input id="firstName" type="text" placeholder="Enter your first name" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input id="lastName" type="text" placeholder="Enter your last name" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input id="email" type="email" placeholder="Enter your email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone *</label>
+              <input id="phone" type="tel" placeholder="Enter your phone number" required />
+            </div>
+          </div>
+          <div class="form-group full-width">
+            <label for="message">Message *</label>
+            <textarea id="message" placeholder="Enter your message" required></textarea>
+          </div>
+          <button type="submit" class="submit-button">Send Message</button>
+        </form>
+      </div>
+  
+      <!-- Right Section: Image and Buttons -->
+      <div class="feedback-image-section">
+        <div class="icon1-section">
+          <div class="icon1">
+            <img src="assets/email.png" alt="Email Icon">
+            <span>Contact us by email</span><br>
+            <a href="">{{email}}</a>
+          </div>
+        </div>
+        <img src="assets/footer.svg" alt="Feedback" class="feedback-image" width="60%">
+      </div>
+    </div>
+  
+    <!-- Footer Section -->
+    <footer class="feedback-footer">
+      <div class="footer-container">
+        <!-- Left Column Section -->
+        <div class="footer-left">
+          <img src="/assets/logo.png" alt="Logo" class="footer-logo" />
+          <p>eSkooly is the world's best and #1 ranked free online school management software.
+            Our school management software has more features than any school software in the market.</p>
+          <br>
+          <p>Copyright © 2024 eSkooly (SMC Private) Ltd. - All rights reserved.</p>
+        </div>
+  
+        <!-- Middle Column Section -->
+        <div class="footer-middle">
+          <div class="footer-links">
+            <p>ESKOOLY</p>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Help</a>
+          </div>
+          <div class="footer-links">
+            <p>TERMS</p>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy policy</a>
+            <a href="#"> Services</a>
+          </div>
+        </div>
+  
+        <!-- Right Column Section -->
+        <div class="footer-right">
+          <div>
+            <a href="">
+              <img src="/assets/playstore.png" alt="Playstore img" width="40%">
+            </a><br><br>
+            <a href="#">
+              <img src="/assets/applestore.png" alt="Applestore img" width="40%">
+            </a>
+          </div>
+          <div class="footer-icons">
+            <img src="/assets/facebook.png" alt="fb" class="icon" width="30px" height="30px">
+            <img src="/assets/whatsapp.png" alt="whatsapp" class="icon" width="30px" height="30px">
+            <img src="/assets/twitter.png" alt="twitter" class="icon" width="32px" height="32px">
+            <img src="/assets/x.png" alt="x" class="icon" width="30px" height="30px">
+            <img src="/assets/instagram.png" alt="insta" class="icon" width="30px" height="30px">
+          </div>
+        </div>
+      </div>
+    </footer>

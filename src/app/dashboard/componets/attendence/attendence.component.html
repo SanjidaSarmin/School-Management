@@ -1,0 +1,131 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <!-- Logo and School Name (left side) -->
+    <a class="navbar-brand" href="#">
+      <img src="/assets/logo.png" alt="Logo" style="width:40px;">
+    </a>&nbsp;
+    <a class="nav-link" href="#" style="font-size: 18px;">eSkooly</a>
+
+    <!-- Nav links (left side) -->
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/admission">Admissions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/routine">Routine</a>
+        </li>
+        <!-- Class dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Student
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="admissionsDropdown">
+            <li><a class="dropdown-item" routerLink="/dashboard/student/slist">Student List</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/tuition">Tuition fees </a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/examsys">Exam System</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/uniform">Student Uniform</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/exam">Exam Routine</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/rules">Rules and Regulation</a></li>
+            
+          </ul>
+        </li>
+        <!-- Exam dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Result
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="admissionsDropdown">
+            <li><a class="dropdown-item" routerLink="/dashboard/result">Quiz</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/result">Class Test</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/result">Monthly Test</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/result">Final Exam</a></li>
+          </ul>
+        </li>
+        <!-- Class dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Dashboard
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="admissionsDropdown">
+            <li><a class="dropdown-item" routerLink="/dashboard/dash/admin">Admin Dashboard </a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/dash/studentdb">Student Dashboard </a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/dash/teacherdb">Teacher Dashboard </a></li> 
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/notice">Notice Board</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/dashboard/attend'">Attendance</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  [routerLink]="'/dashboard/student/slist'">Info</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right side (Search, Login, and Sign-In) -->
+    <div class="right-side">
+      <!-- Search Bar -->
+      <input class="search-bar form-control" type="search" placeholder="Search" aria-label="Search">
+
+      <!-- Login and Sign In Buttons -->
+      <button class="btn login-btn ms-2" type="button" routerLink="/dashboard/login">Login</button>
+      <button class="btn signin-btn ms-2" type="button" routerLink="/dashboard/signup">Sign In</button>
+    </div>
+  </div>
+</nav>
+
+  
+  <!-- Image -->
+  <div class="unique-challenges-container">
+    <div class="header-image">
+      <img src="/assets/BoywithPC.svg" alt="Person on Clock" />
+    </div>
+  
+  <!-- Main -->
+  <div class="attendance-container">
+    <h2>Attendance Sheet</h2>
+    
+    <!-- Class Selection -->
+    <label for="classSelect">Select Class:</label>
+    <select id="classSelect" (change)="selectClass($event)">
+      <option *ngFor="let className of classes" [value]="className">{{ className }}</option>
+    </select>
+  
+    <!-- Attendance Table -->
+    <table *ngIf="filteredAttendance.length > 0">
+      <thead>
+        <tr>
+          <th>Roll</th>
+          <th>Student Name</th>
+          <th>Class</th>
+          <th>Section</th>
+          <th>Attendance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let attendance of filteredAttendance">
+          <td>{{ attendance.roll }}</td>
+          <td>{{ attendance.name }}</td>
+          <td>{{ attendance.class }}</td>
+          <td>{{ attendance.section }}</td>
+          <td>
+            <span class="attendance-status" [ngClass]="{
+              'present': attendance.attendance === 'present',
+              'absent': attendance.attendance === 'absent',
+              'late': attendance.attendance === 'late'
+            }">
+              {{ attendance.attendance | titlecase }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

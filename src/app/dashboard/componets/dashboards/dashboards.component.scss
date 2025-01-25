@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :host {
+    display: block;
+    width: 100vw; /* Ensure full width of viewport */
+    height: 100vh; /* Ensure full height of viewport */
+    overflow-x: hidden; /* Prevent horizontal scrollbars */
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    // color: #333;
+  }
+  
+  
+  /* Navbar */
+  .navbar {
+    width: 100%;
+    background-color: rgb(17, 37, 82);
+    padding: 10px 20px;
+    margin-top:  none;
+  }
+  
+  .navbar .navbar-nav{
+    color: #f0f2f3;
+    transition: all 0.3s ease;
+  }
+  .navbar .nav-link {
+    color: #ffffff !important; /* Force white color */
+    text-decoration: none; /* Remove underline if present */
+  }
+  
+  .navbar .navbar-nav .nav-link:hover {
+    color: #d1e8ff;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 18px;
+  }
+  
+  .navbar-nav {
+    flex-grow: 1;
+    justify-content: flex-start;
+  }
+  
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    background-color: #f3f5f7;
+  }
+  
+  .dropdown-menu .dropdown-item {
+    color: rgb(20, 20, 20);
+    margin: 10px;
+  }
+  
+  .dropdown-menu .dropdown-item:hover {
+    color: #1b3550;
+  }
+  
+  /* Search bar and buttons */
+  .navbar .search-bar,
+  .navbar .login-btn,
+  .navbar .signin-btn {
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar .search-bar {
+    width: 200px;
+    border: 1px solid #f5f4f4;
+    margin-right: 10px;
+  }
+  
+  .navbar .search-bar:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .navbar .login-btn,
+  .navbar .signin-btn {
+    border: 1px solid #007bff;
+    background-color: white;
+    color: #007bff;
+  }
+  
+  .navbar .login-btn:hover,
+  .navbar .signin-btn:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+  
+  .navbar .right-side {
+    display: flex;
+    align-items: center;
+  }

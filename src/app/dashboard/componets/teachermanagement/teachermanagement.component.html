@@ -1,0 +1,267 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <!-- Logo and School Name (left side) -->
+    <a class="navbar-brand" href="#">
+      <img src="/assets/logo.png" alt="Logo" style="width:40px;">
+    </a>&nbsp;
+    <a class="nav-link" href="#" style="font-size: 18px;">eSkooly</a>
+
+    <!-- Nav links (left side) -->
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/admission">Admissions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/routine">Routine</a>
+        </li>
+        <!-- Class dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Student
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="admissionsDropdown">
+            <li><a class="dropdown-item" routerLink="/dashboard/student/slist">Student List</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/tuition">Tuition fees </a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/examsys">Exam System</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/uniform">Student Uniform</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/exam">Exam Routine</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/rules">Rules and Regulation</a></li>
+            
+          </ul>
+        </li>
+        <!-- Exam dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Result
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="admissionsDropdown">
+            <li><a class="dropdown-item" routerLink="/dashboard/result">Quiz</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/result">Class Test</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/result">Monthly Test</a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/result">Final Exam</a></li>
+          </ul>
+        </li>
+        <!-- Class dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Dashboard
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="admissionsDropdown">
+            <li><a class="dropdown-item" routerLink="/dashboard/dash/admin">Admin Dashboard </a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/dash/studentdb">Student Dashboard </a></li>
+            <li><a class="dropdown-item" routerLink="/dashboard/dash/teacherdb">Teacher Dashboard </a></li> 
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/notice">Notice Board</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/dashboard/attend'">Attendance</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  [routerLink]="'/dashboard/student/slist'">Info</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right side (Search, Login, and Sign-In) -->
+    <div class="right-side">
+      <!-- Search Bar -->
+      <input class="search-bar form-control" type="search" placeholder="Search" aria-label="Search">
+
+      <!-- Login and Sign In Buttons -->
+      <button class="btn login-btn ms-2" type="button" routerLink="/dashboard/login">Login</button>
+      <button class="btn signin-btn ms-2" type="button" routerLink="/dashboard/signup">Sign In</button>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<!-- Main -->
+<div class="teacher-management">
+    <div class="header">
+      <h2>Teacher Management</h2>
+      <button class="add-teacher-btn" (click)="openAddTeacherModal()">+ Add New Teacher</button>
+    </div>
+  
+    <div class="teacher-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let teacher of teachers">
+            <td>{{ teacher.employeeId }}</td>
+            <td>{{ teacher.name }}</td>
+            <td>{{ teacher.email }}</td>
+            <td>{{ teacher.department }}</td>
+            <td>{{ teacher.status }}</td>
+            <td>
+              <button class="edit-btn" (click)="editTeacher(teacher)">Edit</button> &nbsp;&nbsp;&nbsp;
+              <button class="delete-btn" (click)="deleteTeacher(teacher.employeeId)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Add Teacher Modal -->
+    <div *ngIf="isTeacherModalOpen" class="modal">
+      <div class="modal-content">
+        <h3>Add New Teacher</h3>
+        <form (ngSubmit)="addTeacher()">
+          <label for="employeeId">Employee ID:</label>
+          <input type="text" id="employeeId" [(ngModel)]="newTeacher.employeeId" name="employeeId" required>
+  
+          <label for="name">Name:</label>
+          <input type="text" id="name" [(ngModel)]="newTeacher.name" name="name" required>
+  
+          <label for="email">Email:</label>
+          <input type="email" id="email" [(ngModel)]="newTeacher.email" name="email" required>
+  
+          <label for="department">Department:</label>
+          <select id="department" [(ngModel)]="newTeacher.department" name="department" required>
+            <option value="Mathematics">Mathematics</option>
+            <option value="Science">Science</option>
+            <option value="English">English</option>
+            <option value="History">History</option>
+            <option value="Geography">Geography</option>
+          </select>
+  
+          <label for="status">Status:</label>
+          <select id="status" [(ngModel)]="newTeacher.status" name="status" required>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+  
+          <button type="submit">Add Teacher</button>
+          <button type="button" (click)="closeTeacherModal()">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+   <!-- Footer -->
+  
+   <div class="feedback-container">
+    <!-- Header Section -->
+    <header class="feedback-header">
+      <h1>Drop us a Line.</h1>
+      <p>Ask us a question, or just say Hello.</p>
+    </header>
+  
+    <div class="feedback-main">
+      <!-- Left Section: Feedback Form -->
+      <div class="feedback-form-section">
+        <form class="feedback-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input id="firstName" type="text" placeholder="Enter your first name" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input id="lastName" type="text" placeholder="Enter your last name" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input id="email" type="email" placeholder="Enter your email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone *</label>
+              <input id="phone" type="tel" placeholder="Enter your phone number" required />
+            </div>
+          </div>
+          <div class="form-group full-width">
+            <label for="message">Message *</label>
+            <textarea id="message" placeholder="Enter your message" required></textarea>
+          </div>
+          <button type="submit" class="submit-button">Send Message</button>
+        </form>
+      </div>
+  
+      <!-- Right Section: Image and Buttons -->
+      <div class="feedback-image-section">
+        <div class="icon1-section">
+          <div class="icon1">
+            <img src="assets/email.png" alt="Email Icon">
+            <span>Contact us by email</span><br>
+            <a href="">{{mail}}</a>
+          </div>
+        </div>
+        <img src="assets/footer.svg" alt="Feedback" class="feedback-image" width="60%">
+      </div>
+    </div>
+  
+    <!-- Footer Section -->
+    <footer class="feedback-footer">
+      <div class="footer-container">
+        <!-- Left Column Section -->
+        <div class="footer-left">
+          <img src="/assets/logo.png" alt="Logo" class="footer-logo" />
+          <p>eSkooly is the world's best and #1 ranked free online school management software.
+            Our school management software has more features than any school software in the market.</p>
+          <br>
+          <p>Copyright © 2024 eSkooly (SMC Private) Ltd. - All rights reserved.</p>
+        </div>
+  
+        <!-- Middle Column Section -->
+        <div class="footer-middle">
+          <div class="footer-links">
+            <p>ESKOOLY</p>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Help</a>
+          </div>
+          <div class="footer-links">
+            <p>TERMS</p>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy policy</a>
+            <a href="#"> Services</a>
+          </div>
+        </div>
+  
+        <!-- Right Column Section -->
+        <div class="footer-right">
+          <div>
+            <a href="">
+              <img src="/assets/playstore.png" alt="Playstore img" width="40%">
+            </a><br><br>
+            <a href="#">
+              <img src="/assets/applestore.png" alt="Applestore img" width="40%">
+            </a>
+          </div>
+          <div class="footer-icons">
+            <img src="/assets/facebook.png" alt="fb" class="icon" width="30px" height="30px">
+            <img src="/assets/whatsapp.png" alt="whatsapp" class="icon" width="30px" height="30px">
+            <img src="/assets/twitter.png" alt="twitter" class="icon" width="32px" height="32px">
+            <img src="/assets/x.png" alt="x" class="icon" width="30px" height="30px">
+            <img src="/assets/instagram.png" alt="insta" class="icon" width="30px" height="30px">
+          </div>
+        </div>
+      </div>
+    </footer>
+    <router-outlet></router-outlet>
+  
+
+
+  
